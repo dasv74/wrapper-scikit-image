@@ -37,7 +37,7 @@ public class WrapperScikitImageSnake extends WrapperSkimageAbstract {
 	}
 	
 	public String getSyntax() {
-		return "out = skimage.segmentation.active_contour(image, init)";
+		return "out = skimage.segmentation.active_contour(image, init, w_line, w_edge)";
 	}
 	
 	public JPanel getParametersPanel() {
