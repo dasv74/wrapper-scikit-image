@@ -1,0 +1,21 @@
+<project name="Wrapper_scikit_image" default="main" basedir=".">
+	
+	<property name="imagej" location="/Users/dsage/Desktop/ImageJ.app/plugins/" />
+	<property name="fiji" location="/Users/dsage/Desktop/Fiji.app/plugins/" />
+	
+	<target name="main" description="Main target">
+		<echo>Building the ${ant.project.name}.jar file.</echo>
+		
+		<jar jarfile="${ant.project.name}.jar">
+			<fileset dir="." includes="plugins.config" />
+			<fileset dir="bin" includes="**/*.*" />
+		</jar>
+		
+		<echo>Copying the ${ant.project.name}.jar file into ${imagej}.</echo>
+		<copy file="${ant.project.name}.jar" toDir="${imagej}" />
+		<echo>Copying the ${ant.project.name}.jar file into ${fiji}.</echo>
+		<copy file="${ant.project.name}.jar" toDir="${fiji}" />
+	</target>
+	
+</project>
+
